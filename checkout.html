@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout - Tapeey</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #f8f9fa; font-family: 'Inter', sans-serif; }
+        .checkout-container { max-width: 800px; margin: 50px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body>
+    <div class="container checkout-container">
+        <h2 class="fw-bold mb-4">🛒 Keranjang Belanja</h2>
+        <div id="daftar-item"></div>
+        <hr>
+        <div class="d-flex justify-content-between fw-bold fs-4">
+            <span>Total Bayar:</span>
+            <span id="total-harga">Rp 0</span>
+        </div>
+        <button class="btn btn-success w-100 py-3 mt-4 fw-bold" onclick="kirimWA()">
+            KONFIRMASI VIA WHATSAPP
+        </button>
+        <a href="index.html" class="btn btn-link w-100 mt-2 text-muted">Kembali Belanja</a>
+    </div>
+
+    <script>
+        function muatCheckout() {
+            let keranjang = JSON.parse(localStorage.getItem('keranjang')) || [];
+            let wadah = document.getElementById('daftar-item');
+            let totalElement = document.getElementById('total-harga');
+            let total = 0;
+
+            if (keranjang.length === 0) {
+                wadah.innerHTML = "<p class='text-center'>Keranjang kosong!</p>";
+                return;
+            }
+
+            wadah.innerHTML = keranjang.map((item, index) => {
+                total += item.harga;
+                return `
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="${item.img}" width="70" class="rounded me-3">
+                        <div class="flex-grow-1">
+                            <h6 class="mb-0 fw-bold">${item.nama}</h6>
+                            <small class="text-muted">Rp ${item.harga.toLocaleString()}</small>
+                        </div>
+                        <button class="btn btn-sm btn-outline-danger" onclick="hapusItem(${index})">Hapus</button>
+                    </div>`;
+            }).join('');
+            totalElement.innerText = "Rp " + total.toLocaleString();
+        }
+
+        function hapusItem(index) {
+            let keranjang = JSON.parse(localStorage.getItem('keranjang'));
+            keranjang.splice(index, 1);
+            localStorage.setItem('keranjang', JSON.stringify(keranjang));
+            muatCheckout();
+        }
+
+        function kirimWA() {
+            let keranjang = JSON.parse(localStorage.getItem('keranjang'));
+            let pesan = "Halo Tapeey, saya mau order:%0A";
+            keranjang.forEach(item => pesan += `- ${item.nama} (Rp ${item.harga})%0A`);
+            window.open(`https://wa.me/6289518984438?text=${pesan}`, '_blank');
+        }
+
+        muatCheckout();
+
+        function tampilkanPesanan() {
+    let keranjang = JSON.parse(localStorage.getItem('keranjang')) || [];
+    let wadah = document.getElementById('daftar-pesanan'); // ID tempat nampilin list
+    let totalHarga = 0;
+
+    if (keranjang.length === 0) {
+        wadah.innerHTML = "<p>Keranjang kosong!</p>";
+        return;
+    }
+
+    wadah.innerHTML = ""; // Reset
+    keranjang.forEach((item, index) => {
+        totalHarga += item.harga;
+        wadah.innerHTML += `
+            <div class="d-flex justify-content-between mb-2">
+                <span>${item.nama}</span>
+                <span>Rp ${item.harga.toLocaleString()}</span>
+            </div>
+        `;
+    });
+
+    document.getElementById('total-bayar').innerText = "Rp " + totalHarga.toLocaleString();
+}
+tampilkanPesanan();
+    </script>
+</body>
+</html>

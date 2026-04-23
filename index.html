@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <title>Tapeey - Toko Jualan Tape</title>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Inter:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<header class="header-shopee">
+    <div class="container-lg">
+        <div class="row align-items-center py-2">
+            
+            <div class="col-md-2 col-4">
+                <h2 class="logo-text">Tapeey</h2>
+            </div>
+
+            <div class="col-md-8 col-6">
+                <div class="search-bar-wrapper">
+   				 <input type="text" id="searchInput" placeholder="Cari Bolu atau Kolak..." class="search-input-shopee">
+    
+   					 <button class="search-button-shopee" onclick="searchAndJump()">
+       			 		<span>Cari</span>
+   				 	</button>
+				</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <nav class="d-flex align-items-center justify-content-between py-3 px-4 bg-white shadow-sm sticky-top">
+    <div class="logo fw-bold fs-3 text-success">T</div>
+
+    <ul class="list-unstyled d-flex gap-4 mb-0">
+        <li><a href="#about" class="text-decoration-none text-dark fw-medium">About us</a></li>
+        <li><a href="#portfolio" class="text-decoration-none text-dark fw-medium">Products</a></li>
+        <li><a href="checkout.html" class="text-decoration-none text-dark fw-medium">Checkout</a></li>
+    </ul>
+
+  <div class="nav-icons" style="margin-left: 20px;">
+    <a href="checkout.html" style="
+        position: relative !important; 
+        display: inline-flex !important; 
+        align-items: center; 
+        justify-content: center; 
+        text-decoration: none; 
+        color: #333; 
+        width: 40px; 
+        height: 40px;">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+
+        <span id="cart-count" style="
+            position: absolute !important; 
+            top: 0px !important; 
+            right: 0px !important; 
+            background-color: #dc3545 !important; 
+            color: white !important; 
+            font-size: 10px !important; 
+            font-weight: bold !important;
+            width: 18px !important; 
+            height: 18px !important; 
+            border-radius: 50% !important; 
+            display: none; /* Nanti diganti JS jadi flex */
+            align-items: center !important; 
+            justify-content: center !important; 
+            border: 2px solid white !important;
+            z-index: 999 !important;
+            padding: 0 !important;
+            line-height: 0 !important;">
+            0
+        </span>
+    </a>
+</div>
+</nav>
+
+<section class="banner-box">
+    <div class="content">
+        <h2>Tapeey</h2>
+        <p>Menjual Berbagai Konsumsi Tape – Dari Singkong Biasa jadi Tape Luar Biasa.</p>
+        <a href="#portfolio" class="btn-shop">Order now</a>
+    </div>
+</section>
+    
+    <header class="hero">
+        <div class="hero-bg">
+            <h1>Tapeey</h1>
+        </div>
+    </header>
+
+<section id="about" class="about-section py-5">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h6 class="text-uppercase" style="color: #6b8e23; letter-spacing: 2px; font-weight: bold;">Our Story</h6>
+                
+                <h2 class="display-4 fw-bold mb-4">Tentang Tapeey</h2>
+                
+                <p class="lead text-muted" style="line-height: 1.8; font-size: 1.1rem;">
+                    Tapeey adalah platform online yang menghadirkan tape pilihan dengan kualitas terbaik dan cita rasa autentik khas Indonesia. Di sini, kamu bisa menikmati kelezatan tape yang manis, lembut, dan dibuat dari bahan pilihan.
+                </p>
+                <p class="text-muted" style="line-height: 1.8;">
+                    Tidak hanya soal rasa, Tapeey juga mengutamakan pelayanan yang ramah, proses pemesanan yang mudah, serta pengiriman yang cepat dan aman. Dengan Tapeey, menikmati tape enak jadi lebih praktis dan menyenangkan!
+                </p>
+                
+                <hr style="width: 60px; border: 2px solid #6b8e23; margin: 30px auto; opacity: 1;">
+            </div>
+        </div>
+    </div>
+</section>
+
+   <div class="bg-putih-bersih"> 
+    <section class="philosophy container">
+        <div class="text-content">
+            <h2>Apakah kamu ingin <br> mencoba ini? Bolu <br> Tape </h2>
+            <p>“Dibuat dengan resep pilihan, – bolu tape kami menghadirkan perpaduan sempurna antara kelembutan dan cita rasa khas yang berkelas.”.</p>
+           <a href="#portfolio" class="btn-more">Order Now</a>
+        </div>
+        <div class="image-box">
+            <img src="https://i.pinimg.com/1200x/71/9f/f5/719ff524a6fc71f54763ac02aaf08a07.jpg" alt="Product">
+        </div>
+    </section>
+</div>
+
+	<section id="portfolio" class="overflow-hidden padding-large">
+		<div class="container-lg" data-aos="zoom-in-up" data-aos-delay="300">
+			<div class="row align-items-center"> <div class="col-md-8">
+        <div class="section-header d-flex flex-wrap justify-content-center justify-content-md-start align-items-center mb-2 mb-md-5">
+            <h1 class="display-5">“Aneka Olahan Tape”</h1>
+<a href="#portfolio" class="btn-link ms-0 ms-md-5 fs-5">Pesan sekarang</a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="swiper-buttons d-flex justify-content-end">
+            <div class="swiper-button portfolio-carousel-prev">←</div>
+            <div class="swiper-button portfolio-carousel-next">→</div>
+        </div>
+    </div>
+</div>
+			<div class="row">
+				<div class="col-md-12">
+
+					<div class="portfolio-carousel swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+                                <div class="portfolio-item card border-0 shadow-sm p-3">
+                                    <img src="https://i.pinimg.com/1200x/56/54/14/56541477c632ffcca9ad6bd9f8617e68.jpg" class="card-img-top rounded-4" alt="Tape Goreng">
+                                        <div class="card-body px-0">
+                                            <p class="text-success fw-bold">Cemilan</p>
+                                                 <h3 class="product-name fs-5 fw-bold">Tape Goreng</h3>
+                                                <p class="text-success fw-bold">Rp 30.000</p>
+                                            <button class="btn-view-item" onclick="tambahKeKeranjang('Tape Goreng', 30000, 'https://i.pinimg.com/1200x/56/54/14/56541477c632ffcca9ad6bd9f8617e68.jpg')">
+                Tambah ke Keranjang
+                                             </a>
+                                        </div>
+                                </div>
+                            </div>
+						<div class="swiper-slide">
+                             <div class="portfolio-item card border-0 shadow-sm p-3">
+                                 <img src="https://i0.wp.com/resepkoki.id/wp-content/uploads/2017/04/Resep-Prol-Tape.jpg?fit=1536%2C1920&ssl=1" class="card-img-top rounded-4" alt="Bolu Tape">
+                                   <div class="card-body px-0">
+                                    <p class="text-success fw-bold">Makanan</p>
+                                <h3 class="product-name fs-5 fw-bold">Prol Tape Keju</h3>
+                             <p class="text-success fw-bold">Rp 62.000</p>
+                           <button class="btn-view-item" onclick="tambahKeKeranjang('Prol Tape Keju', 62000, 'https://i0.wp.com/resepkoki.id/wp-content/uploads/2017/04/Resep-Prol-Tape.jpg?fit=1536%2C1920&ssl=1')">
+                Tambah ke Keranjang
+                             </a>
+                         </div>
+                     </div>
+                    </div>
+			<div class="swiper-slide">
+                <div class="portfolio-item card border-0 shadow-sm p-3">
+                    <img src="https://i.pinimg.com/736x/07/22/c7/0722c72539dd9359f0e4eb2d288bd069.jpg" class="card-img-top rounded-4" alt="">
+                    <div class="card-body px-0">
+                        <p class="text-success fw-bold">Dessert</p>
+                        <h3 class="product-name fs-5 fw-bold">Pudding Tape Hijau</h3>
+                        <p class="text-success fw-bold">Rp 25.000</p>
+                       <button class="btn-view-item" onclick="tambahKeKeranjang('Pudding Tape Hijau', 25000, 'https://i.pinimg.com/736x/07/22/c7/0722c72539dd9359f0e4eb2d288bd069.jpg')">
+                Tambah ke Keranjang
+                        </a>
+                    </div>
+                </div>
+            </div>
+					        <div class="swiper-slide">
+                                <div class="portfolio-item card border-0 shadow-sm p-3">
+                                <img src="https://i.pinimg.com/1200x/cb/16/b2/cb16b26b6e9ee98c6d95f0a2488be81e.jpg" class="card-img-top rounded-4" alt="">
+                                    <div class="card-body px-0">
+                                        <p class="text-success fw-bold">Minuman</p>
+                                            <h3 class="product-name fs-5 fw-bold">Es Tape Susu</h3>
+                                            <p class="text-success fw-bold">Rp 28.000</p>  
+                                             <button class="btn-view-item" onclick="tambahKeKeranjang('Es Tape Susu', 28000, 'https://i.pinimg.com/1200x/cb/16/b2/cb16b26b6e9ee98c6d95f0a2488be81e.jpg')">
+                Tambah ke Keranjang
+                                             </a>
+                                     </div>
+                                </div>
+                            </div>
+							<div class="swiper-slide">
+                <div class="portfolio-item card border-0 shadow-sm p-3">
+                    <img src="https://i.pinimg.com/736x/83/a8/0a/83a80a46719c62fa81dc25dc5182d040.jpg" class="card-img-top rounded-4" alt="">
+                    <div class="card-body px-0">
+                        <p class="text-success fw-bold">Minuman</p>
+                        <h3 class="product-name fs-5 fw-bold">Kolak Tape</h3>
+                        <p class="text-success fw-bold">Rp 22.000</p>
+                       <button class="btn-view-item" onclick="tambahKeKeranjang('Kolak Tape', 22000, 'https://i.pinimg.com/736x/83/a8/0a/83a80a46719c62fa81dc25dc5182d040.jpg')">
+                Tambah ke Keranjang
+                        </a>
+                    </div>
+                </div>
+            </div>
+						<div class="swiper-slide">
+                <div class="portfolio-item card border-0 shadow-sm p-3">
+                    <img src="https://i.pinimg.com/1200x/71/9f/f5/719ff524a6fc71f54763ac02aaf08a07.jpg" class="card-img-top rounded-4" alt="">
+                    <div class="card-body px-0">
+                        <p class="text-success fw-bold">Makanan</p>
+                        <h3 class="product-name fs-5 fw-bold">Bolu Tape</h3>
+                        <p class="text-success fw-bold">Rp 75.000</p>
+                        <button class="btn-view-item" onclick="tambahKeKeranjang('Bolu Tape', 75000, 'https://i.pinimg.com/1200x/71/9f/f5/719ff524a6fc71f54763ac02aaf08a07.jpg')">
+                Tambah ke Keranjang
+                        </a>
+                    </div>
+                </div>
+            </div>
+							<div class="swiper-slide">
+                <div class="portfolio-item card border-0 shadow-sm p-3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL4IelGgWe1usP-mf-06DBdJaxNFGEVOiZUw&s"class="card-img-top rounded-4" alt="">
+                    <div class="card-body px-0">
+                        <p class="text-success fw-bold">Makanan</p>
+                        <h3 class="product-name fs-5 fw-bold">Bolu Gulung Tape</h3>
+                        <p class="text-success fw-bold">Rp 67.000</p>
+                        <button class="btn-view-item" onclick="tambahKeKeranjang('Bolu Gulung Tape', 67000, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL4IelGgWe1usP-mf-06DBdJaxNFGEVOiZUw&s')">
+                Tambah ke Keranjang
+                        </a>
+                    </div>
+                </div>
+            </div>
+							<div class="swiper-slide">
+                <div class="portfolio-item card border-0 shadow-sm p-3">
+                    <img src="https://karasantan.id/uploads/2022/09/06/3232/thumb_es-tape-santan-mutiara-laut-hermanawindy.jpg" class="card-img-top rounded-4" alt="">
+                    <div class="card-body px-0">
+                        <p class="text-success fw-bold">Minuman</p>
+                        <h3 class="product-name fs-5 fw-bold">Es Tape Santan</h3>
+                        <p class="text-success fw-bold">Rp 26.000</p>
+                        <button class="btn-view-item" onclick="tambahKeKeranjang('Es Tape Santan', 26000, 'https://karasantan.id/uploads/2022/09/06/3232/thumb_es-tape-santan-mutiara-laut-hermanawindy.jpg')">
+                Tambah ke Keranjang
+                        </a>
+                    </div>
+                </div>
+            </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<footer class="footer-minimalist">
+    <div class="container text-center">
+        <h1 class="footer-logo">Tapeey („• ֊ •„)</h1>
+        <p class="footer-tagline">“Dari Singkong Biasa jadi Tape Luar Biasa”</p>
+        <hr class="footer-line">
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Tapeey Official. All Rights Reserved.</p>
+            <p class="small text-muted">Made with love, from Group 1 ִֶָ. ..𓂃 ࣪ ִֶָ🪽་༘࿐</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+
+function updateNotifKeranjang() {
+    let keranjang = JSON.parse(localStorage.getItem('keranjang')) || [];
+    let badge = document.getElementById('cart-count');
+    
+    if (badge) {
+        // Update angkanya
+        badge.innerText = keranjang.length;
+        
+        // Logika Sembunyi/Muncul
+        if (keranjang.length > 0) {
+            // Kita pakai flex biar angkanya tetap di tengah bulatan merah
+            badge.style.setProperty('display', 'flex', 'important');
+        } else {
+            badge.style.setProperty('display', 'none', 'important');
+        }
+    }
+}
+
+// WAJIB: Panggil fungsi ini di paling bawah script 
+// supaya pas buka web, angkanya langsung muncul (nggak nunggu diklik dulu)
+updateNotifKeranjang();
+
+// Jalankan saat web dibuka
+updateNotifKeranjang();
+
+function tambahKeKeranjang(nama, harga, img) {
+    let keranjang = JSON.parse(localStorage.getItem('keranjang')) || [];
+    keranjang.push({ nama, harga, img });
+    localStorage.setItem('keranjang', JSON.stringify(keranjang));
+    
+    updateNotifKeranjang();
+    alert(nama + " sudah masuk keranjang!");
+}
+</script>
+
+<script>
+function searchAndJump() {
+    // Ambil input dari search bar
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    // Cari semua elemen dengan class product-name
+    let products = document.querySelectorAll('.product-name');
+    let ketemu = false;
+
+    if (input.trim() === "") return;
+
+    products.forEach(product => {
+        if (product.innerText.toLowerCase().includes(input)) {
+            // Teleport ke tengah layar
+            product.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Efek Highlight biar kelihatan
+            product.style.color = "#f53d2d";
+            setTimeout(() => { product.style.color = ""; }, 3000);
+            
+            ketemu = true;
+        }
+    });
+
+    if (!ketemu) alert("Menu '" + input + "' tidak ditemukan.");
+}
+
+// Biar tombol Enter di keyboard juga bisa buat search
+document.getElementById('searchInput')?.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        searchAndJump();
+    }
+});
+</script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper('.portfolio-carousel', {
+    slidesPerView: 1,      /* Muncul 1 gambar di HP */
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.portfolio-carousel-next',
+      prevEl: '.portfolio-carousel-prev',
+    },
+    breakpoints: {
+      768: { slidesPerView: 2 }, /* Muncul 2 gambar di Tablet */
+      1024: { slidesPerView: 3 } /* Muncul 3 gambar di Laptop */
+    }
+  });
+</script>
+
+<script>
+function searchAndJump() {
+    let kataKunci = document.getElementById('searchInput').value.toLowerCase();
+    
+    let daftarProduk = document.querySelectorAll('.product-name');
+    let ditemukan = false;
+
+    if (kataKunci.trim() === "") {
+        alert("Mau cari apa, hey? Ketik dulu namanya.");
+        return;
+    }
+
+    daftarProduk.forEach(produk => {
+        let namaProduk = produk.innerText.toLowerCase();
+
+        if (namaProduk.includes(kataKunci)) {
+            // TELEPORT! Scroll otomatis ke elemen tersebut
+            produk.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'center'     
+            });
+
+            // Kasih efek visual biar user tahu itu hasilnya
+            produk.style.backgroundColor = "green"; 
+            produk.style.padding = "5px";
+            
+            // Hilangkan efek highlight setelah 2 detik
+            setTimeout(() => {
+                produk.style.backgroundColor = "transparent";
+            }, 2000);
+
+            ditemukan = true;
+        }
+    });
+
+    // 5. Kalau nggak ketemu sama sekali
+    if (!ditemukan) {
+        alert("Yahh, '" + kataKunci + "' belum ada di menu Tapeey.");
+    }
+}
+
+// Fitur tambahan: Tekan Enter di keyboard langsung jalan searchnya
+document.getElementById("searchInput").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        searchAndJump();
+    }
+});
+</script>
+
+</body>
+</html>
